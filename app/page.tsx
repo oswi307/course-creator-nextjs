@@ -6,7 +6,6 @@ export default function Home() {
     <main>
       <h1>Bienvenido a courseCreator</h1>
       <Notes />
-
   
     </main>
   );
