@@ -1,0 +1,34 @@
+[
+  {
+    "id": 886,
+    "question": "primera pregunta",
+    "answers": [
+      {
+        "id": 159,
+        "content": "respuesta 1",
+        "checked": true
+      },
+      {
+        "id": 391,
+        "content": "Respuesta 2",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "question": "Segunda pregunta",
+    "answers": [
+      {
+        "id": 481,
+        "content": "Primera respuessta de la 2",
+        "checked": false
+      },
+      {
+        "id": 196,
+        "content": "Segunda respuesta de la 2",
+        "checked": true
+      }
+    ]
+  }
+]

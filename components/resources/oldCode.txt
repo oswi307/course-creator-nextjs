@@ -1,0 +1,38 @@
+    const [questions, SetQuestions]=useState<{id:number, content:string}[]>([])
+    const randomNumber = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
+    function addQuestion(){
+        SetQuestions([...questions, {id:randomNumber,content:''}])
+
+    }
+    function deleteQuestion(item:number){
+        SetQuestions(questions.filter(i=>i.id!==item))
+    }
+    function questionHandler(e:React.ChangeEvent<HTMLInputElement>, id:number){
+      SetQuestions(questions.map((item) =>
+        item.id === id ? { ...item, content: e.target.value } : item))
+
+    }
+    return (
+        <>
+          <h2>Agrega tus preguntas</h2>
+          <button onClick={addQuestion}>Agregar una nueva pregunta</button>
+          {
+            questions.map(item => (
+              <div key={item.id}>
+                <QuizGen2 onChange={(e)=>questionHandler(e,item.id)} />
+                <button onClick={() => deleteQuestion(item.id)}>Eliminar</button>
+              </div>
+            ))
+          }
+           <div style={{ marginTop: '2rem' }}>
+  <h3>Resumen de opciones:</h3>
+  <ul>
+    {questions.map((item) => (
+      <li key={item.id}>
+        <strong>Texto:</strong> {item.content || "(vacío)"} — 
+      </li>
+    ))}
+  </ul>
+</div>
+        </>
+      );
