@@ -1,12 +1,8 @@
 // app/notes/[id]/page.tsx (Server Component)
 import NoteClient from "./NoteClient";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default function Page({ params }: PageProps) {
+
+export default function Page({ params }: { params: { id: string } })  {
   return <NoteClient id={params.id} />
 }
